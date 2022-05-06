@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20220506 13:10:33.281" rpa="false" schemaversion="3">
+<suite id="s1" name="PhNumTestCase" source="c:\Users\spathan4\Documents\Robot\RobFram\PhNumAdd\PhNumTestCase.robot">
+<test id="s1-t1" name="LoginT" line="17">
+<kw name="Open My Browser" library="PhNumAddpom">
+<arg>${Url}</arg>
+<arg>${Browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Url}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<msg timestamp="20220506 13:10:34.048" level="INFO">Opening browser 'Chrome' to base url 'https://pilot.csr-portal.insurance.dxc.com/#/'.</msg>
+<status status="PASS" starttime="20220506 13:10:34.047" endtime="20220506 13:10:51.236"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220506 13:10:51.237" endtime="20220506 13:10:51.392"/>
+</kw>
+<status status="PASS" starttime="20220506 13:10:34.044" endtime="20220506 13:10:51.393"/>
+</kw>
+<kw name="ENter UserName" library="PhNumAddpom">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_loginUsername}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20220506 13:10:51.399" level="INFO">Typing text 'csruser2' into text field 'id:authUsername'.</msg>
+<status status="PASS" starttime="20220506 13:10:51.398" endtime="20220506 13:10:51.666"/>
+</kw>
+<status status="PASS" starttime="20220506 13:10:51.394" endtime="20220506 13:10:51.667"/>
+</kw>
+<kw name="Enter Password" library="PhNumAddpom">
+<arg>${Password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_loginPassword}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20220506 13:10:51.673" level="INFO">Typing text 'Pass@1234' into text field 'id:authPassword'.</msg>
+<status status="PASS" starttime="20220506 13:10:51.671" endtime="20220506 13:10:51.921"/>
+</kw>
+<status status="PASS" starttime="20220506 13:10:51.668" endtime="20220506 13:10:51.921"/>
+</kw>
+<kw name="ClickBtn" library="PhNumAddpom">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Btn_Login}</arg>
+<doc>Click element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:10:51.924" level="INFO">Clicking element 'id:loginBtn'.</msg>
+<status status="PASS" starttime="20220506 13:10:51.923" endtime="20220506 13:10:52.309"/>
+</kw>
+<status status="PASS" starttime="20220506 13:10:51.922" endtime="20220506 13:10:52.310"/>
+</kw>
+<kw name="VerifySuccefullMsg" library="PhNumAddpom">
+<kw name="Sleep" library="BuiltIn">
+<arg>8</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220506 13:11:00.315" level="INFO">Slept 8 seconds</msg>
+<status status="PASS" starttime="20220506 13:10:52.313" endtime="20220506 13:11:00.316"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${green_BanPth}</arg>
+<arg>Logon successful</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220506 13:11:06.110" level="INFO">Element 'xpath://div[@class='toast-message']' contains text 'Logon successful'.</msg>
+<status status="PASS" starttime="20220506 13:11:00.316" endtime="20220506 13:11:06.110"/>
+</kw>
+<status status="PASS" starttime="20220506 13:10:52.312" endtime="20220506 13:11:06.111"/>
+</kw>
+<kw name="SearchPolicyAndAuthorize" library="PhNumAddpom">
+<arg>${Pol}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220506 13:11:09.117" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220506 13:11:06.114" endtime="20220506 13:11:09.117"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_SearchBox}</arg>
+<arg>${Pol}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20220506 13:11:09.120" level="INFO">Typing text '0373601' into text field 'id:contracts-collection-search-text'.</msg>
+<status status="PASS" starttime="20220506 13:11:09.119" endtime="20220506 13:11:09.588"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Search_Icon}</arg>
+<doc>Click element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:11:09.591" level="INFO">Clicking element 'xpath://mat-icon[@id='']'.</msg>
+<status status="PASS" starttime="20220506 13:11:09.590" endtime="20220506 13:11:09.794"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>20</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220506 13:11:29.803" level="INFO">Slept 20 seconds</msg>
+<status status="PASS" starttime="20220506 13:11:09.795" endtime="20220506 13:11:29.803"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${Spinner_Pth}</arg>
+<doc>Waits until element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220506 13:11:29.804" endtime="20220506 13:11:29.847"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${Cust_PolNum}</arg>
+<arg>${Pol}</arg>
+<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
+<msg timestamp="20220506 13:11:29.848" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+<msg timestamp="20220506 13:11:29.852" level="INFO">Verifying element 'id:selected-roles-policy-number-label' contains exact text '0373601'.</msg>
+<status status="PASS" starttime="20220506 13:11:29.848" endtime="20220506 13:11:29.910"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${FullName}</var>
+<arg>${txt_FullN}</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:11:29.983" level="INFO">${FullName} = CAROLINE WIELAND</msg>
+<status status="PASS" starttime="20220506 13:11:29.911" endtime="20220506 13:11:29.983"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Role}</var>
+<arg>${txt_CustRole}</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:11:30.066" level="INFO">${Role} = Owner</msg>
+<status status="PASS" starttime="20220506 13:11:29.984" endtime="20220506 13:11:30.067"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Aut_Btn}</arg>
+<doc>Clicks button identified by ``locator``.</doc>
+<msg timestamp="20220506 13:11:30.069" level="INFO">Clicking button 'id:authorize-undefined-button'.</msg>
+<status status="PASS" starttime="20220506 13:11:30.068" endtime="20220506 13:11:30.882"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>15</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220506 13:11:30.882" endtime="20220506 13:11:30.886"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>id:authorize-sucess-policy-number-label</arg>
+<arg>${Pol}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220506 13:11:33.038" level="INFO">Element 'id:authorize-sucess-policy-number-label' contains text '0373601'.</msg>
+<status status="PASS" starttime="20220506 13:11:30.886" endtime="20220506 13:11:33.039"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>id:authorize-sucess-full-name-label</arg>
+<arg>${FullName}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220506 13:11:33.112" level="INFO">Element 'id:authorize-sucess-full-name-label' contains text 'CAROLINE WIELAND'.</msg>
+<status status="PASS" starttime="20220506 13:11:33.040" endtime="20220506 13:11:33.113"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>id:authorize-sucess-role-label</arg>
+<arg>${Role}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220506 13:11:33.186" level="INFO">Element 'id:authorize-sucess-role-label' contains text 'Owner'.</msg>
+<status status="PASS" starttime="20220506 13:11:33.113" endtime="20220506 13:11:33.186"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220506 13:11:38.190" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220506 13:11:33.187" endtime="20220506 13:11:38.190"/>
+</kw>
+<status status="PASS" starttime="20220506 13:11:06.113" endtime="20220506 13:11:38.191"/>
+</kw>
+<kw name="PhNumberAddition" library="PhNumAddpom">
+<arg>${Pnumber}</arg>
+<arg>${url2}</arg>
+<arg>${Browser}</arg>
+<arg>${wma_User}</arg>
+<arg>${wma_Pass}</arg>
+<arg>${Pol}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Related_Par_Own}</arg>
+<doc>Click element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:11:38.195" level="INFO">Clicking element 'xpath://div[contains(@class,'partyRoleListTable')]//label[text()='Owner']'.</msg>
+<status status="PASS" starttime="20220506 13:11:38.195" endtime="20220506 13:11:38.973"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>9</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220506 13:11:47.981" level="INFO">Slept 9 seconds</msg>
+<status status="PASS" starttime="20220506 13:11:38.974" endtime="20220506 13:11:47.982"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${PhNum_Tab}</arg>
+<doc>Click element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:11:47.983" level="INFO">Clicking element 'xpath://div[text()='PHONE NUMBER']'.</msg>
+<status status="PASS" starttime="20220506 13:11:47.982" endtime="20220506 13:11:48.499"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220506 13:11:50.516" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220506 13:11:48.500" endtime="20220506 13:11:50.517"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Ph_Addbtn}</arg>
+<doc>Click element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:11:50.518" level="INFO">Clicking element 'xpath://mat-icon[text()='add']'.</msg>
+<status status="PASS" starttime="20220506 13:11:50.517" endtime="20220506 13:11:51.025"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PhNum_Field}</arg>
+<arg>${Pnumber}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20220506 13:11:51.027" level="INFO">Typing text '5534342331' into text field 'xpath://span[text()='Type']//preceding::input[1][@placeholder='Phone Number']'.</msg>
+<status status="PASS" starttime="20220506 13:11:51.026" endtime="20220506 13:11:52.762"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Ph_Typ}</arg>
+<doc>Click element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:11:52.763" level="INFO">Clicking element 'xpath://mat-select[@placeholder='Type']'.</msg>
+<status status="PASS" starttime="20220506 13:11:52.762" endtime="20220506 13:11:53.182"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Ph_TypOpt}</arg>
+<doc>Click element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:11:53.184" level="INFO">Clicking element '//span[text()=' WORK CELL']'.</msg>
+<status status="PASS" starttime="20220506 13:11:53.183" endtime="20220506 13:11:53.549"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Save_Btn}</arg>
+<doc>Click element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:11:53.551" level="INFO">Clicking element 'xpath://span[text()='SAVE']'.</msg>
+<status status="PASS" starttime="20220506 13:11:53.550" endtime="20220506 13:11:54.088"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220506 13:11:56.100" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220506 13:11:54.089" endtime="20220506 13:11:56.100"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${Green_Bann_Mess}</arg>
+<arg>Phone Number successfully Added</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220506 13:11:57.038" level="INFO">Element 'xpath://div[@class='ui-growl-message']' contains text 'Phone Number successfully Added'.</msg>
+<status status="PASS" starttime="20220506 13:11:56.101" endtime="20220506 13:11:57.039"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Cls_Btn}</arg>
+<doc>Click element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:11:57.042" level="INFO">Clicking element 'id:modal__cross'.</msg>
+<status status="PASS" starttime="20220506 13:11:57.040" endtime="20220506 13:11:57.437"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220506 13:12:07.452" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20220506 13:11:57.438" endtime="20220506 13:12:07.452"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${Work_Req_Type}</arg>
+<arg>Address Change</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220506 13:12:07.521" level="INFO">Element 'id:workRequestHistoryTable_0_Type' contains text 'Address Change'.</msg>
+<status status="PASS" starttime="20220506 13:12:07.453" endtime="20220506 13:12:07.522"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${Work_Req_Status}</arg>
+<arg>COMPLETED</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220506 13:12:07.668" level="INFO">Element 'id:workRequestHistoryTable_0_Status' contains text 'COMPLETED'.</msg>
+<status status="PASS" starttime="20220506 13:12:07.523" endtime="20220506 13:12:07.668"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Com}</var>
+<arg>${Comp_Code}</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:12:07.764" level="INFO">${Com} = MIC</msg>
+<status status="PASS" starttime="20220506 13:12:07.669" endtime="20220506 13:12:07.765"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url2}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<msg timestamp="20220506 13:12:07.767" level="INFO">Opening browser 'Chrome' to base url 'http://dxcmwbnor461:85/wma/login.jsf'.</msg>
+<status status="PASS" starttime="20220506 13:12:07.766" endtime="20220506 13:12:12.898"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220506 13:12:12.899" endtime="20220506 13:12:13.049"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${WMA_UserName}</arg>
+<arg>${wma_User}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20220506 13:12:13.051" level="INFO">Typing text 'spathan' into text field 'xpath://input[@type='text']'.</msg>
+<status status="PASS" starttime="20220506 13:12:13.050" endtime="20220506 13:12:13.298"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${WMA_Password}</arg>
+<arg>${wma_Pass}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20220506 13:12:13.300" level="INFO">Typing text 'spathan' into text field 'xpath://input[@type='password']'.</msg>
+<status status="PASS" starttime="20220506 13:12:13.299" endtime="20220506 13:12:13.763"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Sub_Btn}</arg>
+<doc>Click element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:12:13.765" level="INFO">Clicking element 'xpath://input[@type='submit']'.</msg>
+<status status="PASS" starttime="20220506 13:12:13.763" endtime="20220506 13:12:17.393"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Poli_Search}</arg>
+<arg>${Pol}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20220506 13:12:17.397" level="INFO">Typing text '0373601' into text field 'xpath://input[@id='mainform:clientRequestMasterId']'.</msg>
+<status status="PASS" starttime="20220506 13:12:17.395" endtime="20220506 13:12:17.572"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${Comp_Cde_Drp}</arg>
+<arg>${Com}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220506 13:12:17.573" level="INFO">Selecting options from selection list 'xpath://select[@name='mainform:clientRequestCompanyCode']' by label MIC.</msg>
+<status status="PASS" starttime="20220506 13:12:17.572" endtime="20220506 13:12:17.733"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${WMA_Search_Btn}</arg>
+<doc>Click element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:12:17.734" level="INFO">Clicking element 'xpath://input[@id='mainform:searchButton']'.</msg>
+<status status="PASS" starttime="20220506 13:12:17.733" endtime="20220506 13:12:21.817"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220506 13:12:25.832" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20220506 13:12:21.818" endtime="20220506 13:12:25.834"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${WMA_Roles_Tab}</arg>
+<doc>Click element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:12:25.835" level="INFO">Clicking element 'xpath://img[@src='/wma/resources/images/tree/roles_in.gif']'.</msg>
+<status status="PASS" starttime="20220506 13:12:25.834" endtime="20220506 13:12:26.035"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220506 13:12:30.049" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20220506 13:12:26.035" endtime="20220506 13:12:30.050"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>tag:iframe</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220506 13:12:30.051" level="INFO">Selecting frame 'tag:iframe'.</msg>
+<status status="PASS" starttime="20220506 13:12:30.050" endtime="20220506 13:12:30.118"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${WMA_Owner_Role}</arg>
+<doc>Click element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:12:30.120" level="INFO">Clicking element 'xpath://span[text()='Owner']//following::td[1]'.</msg>
+<status status="PASS" starttime="20220506 13:12:30.119" endtime="20220506 13:12:31.325"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220506 13:12:35.339" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20220506 13:12:31.326" endtime="20220506 13:12:35.339"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${WMA_Update_Party_Btn}</arg>
+<doc>Click element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:12:35.341" level="INFO">Clicking element 'xpath://input[@id='mainform:updateParty']'.</msg>
+<status status="PASS" starttime="20220506 13:12:35.340" endtime="20220506 13:12:35.570"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220506 13:12:42.575" level="INFO">Slept 7 seconds</msg>
+<status status="PASS" starttime="20220506 13:12:35.571" endtime="20220506 13:12:42.575"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${WMAPH}</var>
+<arg>${wma_PhField}</arg>
+<doc>Returns the value attribute of element identified by ``locator``.</doc>
+<msg timestamp="20220506 13:12:42.972" level="INFO">${WMAPH} = 5534342331</msg>
+<status status="PASS" starttime="20220506 13:12:42.576" endtime="20220506 13:12:42.972"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${WMAPH}</arg>
+<arg>${Pnumber}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220506 13:12:42.972" endtime="20220506 13:12:42.973"/>
+</kw>
+<status status="PASS" starttime="20220506 13:11:38.193" endtime="20220506 13:12:42.974"/>
+</kw>
+<status status="PASS" starttime="20220506 13:10:34.042" endtime="20220506 13:12:42.975"/>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220506 13:12:42.978" endtime="20220506 13:12:48.330"/>
+</kw>
+<status status="PASS" starttime="20220506 13:10:33.303" endtime="20220506 13:12:48.330"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="PhNumTestCase">PhNumTestCase</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220506 13:11:29.848" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+</errors>
+</robot>
