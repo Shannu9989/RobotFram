@@ -21,5 +21,5 @@ LoginT
     ClickBtn
     VerifySuccefullMsg
     SearchPolicyAndAuthorize    ${Pol}
-    EmailAddition    ${Email}
+    EmailAddition    ${Email}    ${url2}    ${Browser}    ${wma_User}    ${wma_Pass}    ${Pol}
  

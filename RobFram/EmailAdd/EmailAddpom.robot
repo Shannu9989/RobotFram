@@ -42,8 +42,7 @@ SearchPolicyAndAuthorize
     Sleep    5
 
 EmailAddition  
-    [Arguments]    ${Email}
-    Switch Browser    1 
+    [Arguments]    ${Email}    ${url2}    ${Browser}    ${wma_User}    ${wma_Pass}    ${Pol}
     Click Element    ${Related_Par_Own}
     Sleep    9
     Click Element    ${Email_Tab}
@@ -59,9 +58,23 @@ EmailAddition
     Sleep    10   
     Element Should Contain    ${Work_Req_Type}    Address Change
     Element Should Contain    ${Work_Req_Status}    COMPLETED
-    Switch Browser    2
-    Click Element    ${Demogra_Tab}
-    Sleep    5
+    ${Com}=    Get Text    ${Comp_Code}
+    Open Browser    ${url2}  ${Browser}
+    Maximize Browser Window
+    Input Text    ${WMA_UserName}    ${wma_User}   
+    Input Text    ${WMA_Password}    ${wma_Pass}
+    Click Element    ${Sub_Btn} 
+    Input Text    ${Poli_Search}    ${Pol}   
+    Select From List By Label    ${Comp_Cde_Drp}    ${Com}
+    Click Element    ${WMA_Search_Btn}
+    Sleep    4
+    Click Element    ${WMA_Roles_Tab}
+    Sleep    4
+    Select Frame    tag:iframe
+    Click Element    ${WMA_Owner_Role}
+    Sleep    4
+    Click Element    ${WMA_Update_Party_Btn}
+    Sleep    7
     ${WMAem}=    Get Value    ${wma_EmailField}
     Should Be Equal    ${WMAem}    ${Email} 
     
