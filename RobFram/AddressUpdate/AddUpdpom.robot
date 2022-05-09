@@ -39,7 +39,7 @@ SearchPolicyAndAuthorize
     Element Should Contain    id:authorize-sucess-policy-number-label    ${Pol}
     Element Should Contain    id:authorize-sucess-full-name-label    ${FullName}
     Element Should Contain    id:authorize-sucess-role-label    ${Role}
-    Sleep    5
+    Sleep    10
 
 AddressChangeAndWMA
     [Arguments]    ${Adderess}    ${url2}    ${Browser}    ${wma_User}    ${wma_Pass}    ${Pol}    
@@ -75,5 +75,16 @@ AddressChangeAndWMA
     ${WMAAdd}    Get Value    ${WMA_Add_Line1}
     Should Be Equal    ${WMAAdd}    ${Adderess} 
 
+CloseCall
+    [Arguments]    ${Pnumber}    ${Pol}
+    Switch Browser    1
+    Click Element    ${Call_DispDrop}
+    Click Element    ${Call_DisOpt}
+    Input Text    ${PhNum_Field}    ${Pnumber}
+    Click Element    ${Confirmation_ChkBox}
+    ${Calldip}=    Get Text    ${Call_DispDrop}
+    Click Element    ${SaveCloseBtn}
+    Element Should Contain    ${My_CallHis_Pol}    ${Pol}
+    Element Text Should Be    ${My_CallHis_Rea}    ${Calldip}
     
     

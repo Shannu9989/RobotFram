@@ -77,5 +77,17 @@ EmailAddition
     Sleep    7
     ${WMAem}=    Get Value    ${wma_EmailField}
     Should Be Equal    ${WMAem}    ${Email} 
+
+CloseCall
+    [Arguments]    ${Pnumber}    ${Pol}
+    Switch Browser    1
+    Click Element    ${Call_DispDrop}
+    Click Element    ${Call_DisOpt}
+    Input Text    ${PhNum_Field}    ${Pnumber}
+    Click Element    ${Confirmation_ChkBox}
+    ${Calldip}=    Get Text    ${Call_DispDrop}
+    Click Element    ${SaveCloseBtn}
+    Element Should Contain    ${My_CallHis_Pol}    ${Pol}
+    Element Text Should Be    ${My_CallHis_Rea}    ${Calldip}
     
     

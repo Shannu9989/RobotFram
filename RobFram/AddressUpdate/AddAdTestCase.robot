@@ -10,6 +10,7 @@ ${username}    csruser2
 ${Password}    Pass@1234
 ${Pol}    0373601
 ${Adderess}    1845 FAIRMOUNT 
+${Pnumber}    5534342331
 ${wma_User}    spathan
 ${wma_Pass}    spathan
 
@@ -22,5 +23,5 @@ LoginT
     VerifySuccefullMsg
     SearchPolicyAndAuthorize    ${Pol}
     AddressChangeAndWMA    ${Adderess}    ${url2}    ${Browser}    ${wma_User}    ${wma_Pass}    ${Pol}
-    
+    CloseCall    ${Pnumber}    ${Pol}
  

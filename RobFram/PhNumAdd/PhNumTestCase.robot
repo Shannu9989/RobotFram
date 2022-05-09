@@ -22,4 +22,4 @@ LoginT
     VerifySuccefullMsg
     SearchPolicyAndAuthorize    ${Pol}
     PhNumberAddition    ${Pnumber}     ${url2}    ${Browser}    ${wma_User}    ${wma_Pass}    ${Pol}
- 
+    CloseCall    ${Pnumber}    ${Pol}

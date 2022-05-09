@@ -30,6 +30,14 @@ Ph_TypOpt="//span[text()=' WORK CELL']"
 Email_Tab="xpath://div[text()='ADDRESSES']//following::div[4]"
 Email_Field="xpath://span[text()='Type']//preceding::input[1][@placeholder='Email']"
 Email_TypeOpt="//span[text()=' ELEC MAIL']"
+Call_DispDrop="//mat-select[@id='selected-roles-reason-select']"
+Call_DisOpt="//div[text()='Annuitization']"
+PhNum_Field="//input[@id='close-call-phone-number-text']"
+Confirmation_ChkBox="//label[@for='close-call-confirmation-checkbox-input']"
+SaveCloseBtn="//button[@id='save-close-close-call-button']"
+My_CallHis_Pol="//div[@class='myCallHistoryTable fitstAndLastbuttons ng-star-inserted']//following::td[@id='_0__POLICY_CAMELCASE']"
+My_CallHis_Rea="//div[@class='myCallHistoryTable fitstAndLastbuttons ng-star-inserted']//following::td[@id='_0__REASON']"
+
 
 #WMA_REGION
 WMA_UserName="xpath://input[@type='text']"

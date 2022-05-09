@@ -9,6 +9,7 @@ ${url2}    http://dxcmwbnor461:85/wma/login.jsf
 ${username}    csruser2    
 ${Password}    Pass@1234
 ${Pol}    0373601
+${Pnumber}    5534342331
 ${Email}    CLAY@GMAIL.COM
 ${wma_User}    spathan
 ${wma_Pass}    spathan
@@ -22,4 +23,4 @@ LoginT
     VerifySuccefullMsg
     SearchPolicyAndAuthorize    ${Pol}
     EmailAddition    ${Email}    ${url2}    ${Browser}    ${wma_User}    ${wma_Pass}    ${Pol}
- 
+    CloseCall    ${Pnumber}    ${Pol}
